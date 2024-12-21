@@ -1,0 +1,49 @@
+.login__page{
+    width: 60%;
+    margin: 30px auto;
+}
+.login__form
+.title{
+    width: 100%;
+}
+.login__header{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.login__item{
+    width: 100%;
+    margin: 30px auto;
+}
+.item__label{
+    display: block;
+}
+.item__input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    line-height: 20px;
+}
+.button{
+    margin: 20px auto;
+}
+.login__button{
+    display: block;
+    background: red;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+.register{
+    text-align: center;
+    margin: 10px auto;
+}
+.register__link{
+    text-align: center;
+    font-size: 20px;
+    color: blue;
+}

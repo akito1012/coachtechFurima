@@ -1,0 +1,42 @@
+.header{
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 5px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+}
+.coachtech{
+    margin: 0 15px;
+}
+.search{
+    padding: 5px 150px 5px 30px;
+    font-size: 20px;
+}
+.button{
+    display: inline;
+}
+.logout__button{
+    background: black;
+    border: none;
+    color: white;
+    margin: 0 auto;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+.mypage__button{
+    background: black;
+    border: none;
+    color: white;
+    margin: 0 auto;
+    padding: 5px 15px;
+    font-size: 20px;
+}
+.purchase__button{
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 5px 15px;
+    font-size: 20px;
+
+}
