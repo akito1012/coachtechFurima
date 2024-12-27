@@ -16,7 +16,8 @@
 .button{
     display: inline;
 }
-.logout__button{
+.logout__button,
+.login__button{
     background: black;
     border: none;
     color: white;

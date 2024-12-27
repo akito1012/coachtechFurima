@@ -1,12 +1,52 @@
-.register
-.register__header
-.register__content
-.register__form
-.register__item
-.item__label
-.item__input
-.error
-.button
-.register__button
-.login
-.login__link
+.register{
+    width: 60%;
+    margin: 0 auto;
+}
+.register__header{
+    text-align: center;
+}
+.register__content{
+    width: 100%;
+}
+.register__form{
+    width: 100%;
+}
+.register__item{
+    width: 100%;
+}
+.item__label{
+    display: block;
+    font-size: 20px;
+}
+.item__input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+.error{
+    color: red;
+}
+.register__button{
+    width: 100%;
+}
+.register__button-submit{
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: none;
+    background: red;
+    color: white;
+}
+.login{
+    width: 100%;
+}
+.login__link{
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: blue;
+}

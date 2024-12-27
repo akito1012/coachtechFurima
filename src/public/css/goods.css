@@ -1,0 +1,25 @@
+.goods{
+    width: 100%;
+}
+.goods__header{
+    width: 100%;
+    margin-top: 50px;
+    border-bottom-style: solid;
+}
+.goods__button{
+    width: 100%;
+    margin-left: 20%;
+}
+.button__list{
+    margin: 0 10px;
+    font-size: 30px;
+    border: none;
+    background-color: #FFF;
+}
+.button__mylist{
+    margin: 0 50px;
+    font-size: 30px;
+    border: none;
+    background-color: #FFF;
+}
+.goods__item

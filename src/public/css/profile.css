@@ -1,0 +1,51 @@
+.profile{
+    width: 60%;
+    margin: 10px auto;
+}
+.profile__title{
+    text-align: center;
+    font-size: 30px;
+}
+.profile__content{
+    width: 100%;
+}
+.profile__form{
+    width: 100%;
+}
+.profile__img{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.profile__img-button
+.profile__item{
+    width: 100%;
+}
+.item__label{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+}
+.item__input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+.error{
+    color: red;
+    margin-bottom: 5px;
+}
+.profile__button{
+    width: 100%;
+}
+.profile__button-submit{
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 3px;
+    border: none;
+    background: red;
+    color: white;
+}

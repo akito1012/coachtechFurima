@@ -14,9 +14,16 @@
         <img src="{{ asset('image/coachtech_logo.svg') }}" alt="coachtech" class="coachtech">
         <input type="text" class="search" name="name" value="{{ old('name') }}" placeholder="なにをお探しですか？">
         <div class="button">
-            <button class="logout__button">ログアウト</button>
+            @if (Auth::check())
+            <form action="/logout" class="logout__form" method="post">
+                @csrf
+                <button class="logout__button">ログアウト</button>
+            </form>
             <button class="mypage__button">マイページ</button>
             <button class="purchase__button">出品</button>
+            @else
+            <button class="login__button">ログイン</button>
+            @endif
         </div>
     </div>
 
