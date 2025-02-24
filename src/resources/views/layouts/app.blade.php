@@ -19,11 +19,18 @@
                 @csrf
                 <button class="logout__button">ログアウト</button>
             </form>
-            <button class="mypage__button">マイページ</button>
-            <button class="purchase__button">出品</button>
             @else
-            <button class="login__button">ログイン</button>
+            <form action="/login" class="login__form" method="get">
+                @csrf
+                <button class="login__button">ログイン</button>
+            </form>
             @endif
+            <a href="/mypage">
+                <button class="mypage__button">マイページ</button>
+            </a>
+            <a href="/sell">
+                <button class="purchase__button">出品</button>
+            </a>
         </div>
     </div>
 

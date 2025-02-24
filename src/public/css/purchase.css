@@ -1,0 +1,67 @@
+.purchase {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.purchase__form {
+    display: flex;
+    width: 100%;
+}
+
+.purchase__left {
+    margin-left: 50px;
+    width: 80%;
+}
+
+.purchase-item {
+    display: flex;
+}
+
+.purchase-item__left {
+    width: 30%;
+    margin-left: 30px;
+}
+
+.purchase-item__right {
+    margin-top: 10px;
+}
+.purchase-item__img{
+    display: block;
+}
+.purchase-item__name{
+    display: block;
+}
+.purchase-item__price{
+    display: block;
+}
+.purchase-payment{
+    width: 100%;
+}
+.payment__header{
+    font-size: 30px;
+}
+.payment__select{
+    width: 100%;
+}
+.purchase__sipping-address
+.sipping-address__header{
+    font-size: 30px;
+}
+.sipping-address__input
+.purchase__right {
+    width: 100%;
+}
+.payment__table
+.payment__table-row
+.payment__table-header{
+    font-size: 30px;
+}
+.payment__table-description
+.item-price__input
+.payment__button {
+    width: 100%;
+}
+.payment__button-submit {
+    display: block;
+    width: 100%
+}

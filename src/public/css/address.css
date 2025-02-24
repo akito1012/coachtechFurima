@@ -1,0 +1,40 @@
+.address{
+    width: 80%;
+    margin: 10px auto;
+}
+.address__header{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.address__content
+.address__form
+.address__inner{
+    width: 60%;
+    margin: 50px auto;
+}
+.address__label{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.address__input{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+}
+.address__button{
+    width: 60%;
+    margin: 50px auto;
+}
+.address__button-submit{
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    background-color: red;
+}

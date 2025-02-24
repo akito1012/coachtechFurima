@@ -1,0 +1,93 @@
+.item{
+    width: 80%;
+    margin: 10px auto;
+}
+.item__form{
+    display: flex;
+}
+.item__left{
+    margin-left: 50px;
+    width: 40%;
+}
+.item__img
+.item__img-input
+.item__right{
+    margin-top: 30px;
+}
+.item__inner
+.item__detail
+.item__name-input{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.item__brand-input{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.item__price-input{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.item-button__sell,
+.send__button{
+    width: 100%;
+}
+.item-button__sell-submit,
+.send__button-submit{
+    width: 100%;
+    margin: 10px auto;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+}
+.item__counts{
+    width: 100%;
+    margin: 10px auto;
+}
+.count__like
+.count__comment
+.item__explanation{
+    width: 100%;
+}
+.item__explanation-header{
+    width: 100%;
+}
+.item__explanation-textarea{
+    width: 100%;
+}
+.item__information{
+    width: 100%;
+    margin: 10px auto;
+}
+.item__category{
+    display: block;
+    margin: 5px;
+}
+.item__condition{
+    display: block;
+    margin: 5px;
+}
+.comment__count-label
+.comment__count-input
+.item-comment__user-name{
+    display: block;
+}
+.item-comment__everyone-comment{
+    display: block;
+    width: 100%;
+}
+.item__comment-addition{
+    width: 100%;
+}
+.label__comment-addition{
+    display: block;
+}
+.textarea__comment-addition{
+    display: block;
+    width: 100%;
+}

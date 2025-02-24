@@ -1,0 +1,78 @@
+.sell{
+    width: 80%;
+    margin: 10px auto;
+}
+.sell__header{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.sell__content{
+    width: 60%;
+    margin: auto;
+}
+.sell__form{
+    width: 100%;
+}
+.sell__img{
+    width: 100%;
+}
+.item__label{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+}
+.input__img{
+    display: block;
+    width: 100%;
+}
+.sell__detail{
+    width: 100%;
+    margin: 10px auto;
+}
+.sell__header-detail,
+.sell__header-describe{
+    width: 100%;
+    font-size: 25px;
+    color: gainsboro;
+    border-bottom: solid 3px gainsboro;
+}
+.sell__category{
+    width: 100%;
+    margin: 10px auto;
+}
+.input__category
+.sell__condition{
+    width: 100%;
+    margin: 20px auto;
+}
+.sell__header-condition{
+    width: 100%;
+}
+.condition__select{
+    width: 100%;
+}
+.sell__describe{
+    width: 100%;
+    margin: 10px auto;
+}
+.sell__header-describe{
+    width: 100%;
+}
+.item__input{
+    width: 100%;
+}
+.sell__button{
+    width: 100%;
+    margin: 10px auto;
+}
+.sell__button-submit{
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    color: white;
+    background-color: red;
+    font-size: 20px;
+    border-radius: 3px;
+    border: none;
+}
