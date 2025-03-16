@@ -9,8 +9,14 @@
     margin-left: 50px;
     width: 40%;
 }
-.item__img
-.item__img-input
+.item__img{
+    width: 100%;
+    margin: auto;
+}
+.item__img-input{
+    width: 200px;
+    height: 200px;
+}
 .item__right{
     margin-top: 30px;
 }
@@ -90,4 +96,7 @@
 .textarea__comment-addition{
     display: block;
     width: 100%;
+}
+.error{
+    color: red;
 }

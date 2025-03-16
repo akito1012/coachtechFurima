@@ -9,20 +9,32 @@
 <div class="goods">
     <div class="goods__header">
         <div class="goods__button">
-            <button class="button__list">オススメ</button>
-            <button class="button__mylist">マイリスト</button>
+            <form action="/" method="get">
+                <button class="button__list" type="submit" name="tab" value="">オススメ</button>
+                <button class="button__mylist" type="submit" name="tab" value="mylist">マイリスト</button>
+            </form>
         </div>
     </div>
     <div class="goods__item">
-        <form action="/" method="get" class="item__form">
+        <form class="goods__form"action="/" method="post" class="item__form">
             @csrf
-            @foreach($items as $item)
+            @if($tab == 'mylist')
+            @foreach($users->items as $item)
             <a href="/item/{{$item->id}}" class="item__page">
                 <img src="" alt="商品画像" class="item__img">
-                <input type="text" class="item__input" name="name" value="{{ $item->name }}">
+                <input class="item_name-input"type="text"  name="name" value="{{ $item->name }}">
                 <input type="hidden" class="id__submit" name="id" value="{{ $item->id }}">
             </a>
             @endforeach
+            @else
+            @foreach($items as $item)
+            <a href="/item/{{$item->id}}" class="item__page">
+                <img src="{{ asset('storage/item_img/{$item->img}') }}" alt="商品画像" class="item__img" width="100" height="100">
+                <input class="item__name-input"type="text"  name="name" value="{{ $item->name }}">
+                <input type="hidden" class="id__submit" name="id" value="{{ $item->id }}">
+            </a>
+            @endforeach
+            @endif
         </form>
     </div>
 </div>

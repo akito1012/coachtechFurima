@@ -76,3 +76,6 @@
     border-radius: 3px;
     border: none;
 }
+.error {
+    color: red;
+}

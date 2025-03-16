@@ -9,8 +9,9 @@ class Category extends Model
 {
     use HasFactory;
     
-    public function items(){
-        $this->belongsToMany(Item::class, 'category_item', 'category_id', 'item_id');
+    public function items()
+    {
+        $this->belongsToMany(Item::class, 'category_item');
     }
     protected $fillable = ['category'];
 }

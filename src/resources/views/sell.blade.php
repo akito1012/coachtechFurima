@@ -21,8 +21,13 @@
                     <label for="" class="item__label">カテゴリー</label>
                     @foreach($categories as $category)
                     <label for="{{ $category['category'] }}">{{ $category['category'] }}</label>
-                    <input id="{{ $category['category'] }}" type="checkbox" class="input__category" name="category_id" value="{{ $category['id'] }}" />
+                    <input id="{{ $category['category'] }}" type="checkbox" class="input__category" name="category_ids[]" value="{{ $category['id'] }}" />
                     @endforeach
+                </div>
+                <div class="error">
+                    @error('category_ids[]')
+                    {{ $message }}
+                    @enderror
                 </div>
                 <div class="sell__condition">
                     <label class="item__label">商品の状態</label>
@@ -33,17 +38,37 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="error">
+                    @error('condition')
+                    {{ $message }}
+                    @enderror
+                </div>
             </div>
             <div class="sell__describe">
                 <h3 class="sell__header-describe">商品名と説明</h3>
                 <label for="" class="item__label">商品名</label>
                 <input type="text" class="item__input" name="name" value="{{ old('name') }}">
+                <div class="error">
+                    @error('name')
+                    {{ $message }}
+                    @enderror
+                </div>
                 <label for="" class="item__label">ブランド</label>
                 <input type="text" class="item__input" name="bland" value="{{ old('bland') }}">
                 <label for="" class="item__label">商品の説明</label>
                 <input type="text" class="item__input" name="explanation" value="{{ old('explanation') }}">
+                <div class="error">
+                    @error('explanation')
+                    {{ $message }}
+                    @enderror
+                </div>
                 <label for="" class="item__label">販売価格</label>
                 <input type="text" class="item__input" name="price" value="{{ old('price') }}">
+                <div class="error">
+                    @error('price')
+                    {{ $message }}
+                    @enderror
+                </div>
             </div>
             <div class="sell__button">
                 <button class="sell__button-submit" type="submit">出品する</button>

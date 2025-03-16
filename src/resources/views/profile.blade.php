@@ -29,7 +29,7 @@
                 </div>
                 <div class="error">
                     @error('name')
-                    {{ $messages }}
+                    {{ $message }}
                     @enderror
                 </div>
                 <div class="profile__item">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="error">
                     @error('post_code')
-                    {{ $messages }}
+                    {{ $message }}
                     @enderror
                 </div>
                 <div class="profile__item">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="error">
                     @error('address')
-                    {{ $messages }}
+                    {{ $message }}
                     @enderror
                 </div>
                 <div class="profile__item">
@@ -71,7 +71,7 @@
                 </div>
                 <div class="error">
                     @error('building')
-                    {{ $messages }}
+                    {{ $message }}
                     @enderror
                 </div>
                 <div class="profile__button">

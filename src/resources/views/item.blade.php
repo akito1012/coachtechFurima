@@ -7,11 +7,11 @@
 @section('content')
 
 <div class="item">
-    <form action="/item/{item_id}" method="get"class="item__form">
+    <form action="/item/{item_id}" method="post"class="item__form">
         @csrf
         <div class="item__left">
             <div class="item__img">
-                <input type="text" class="item__img-input" value="商品画像">
+                <input type="text" class="item__img-input" value="商品画像" width="200" height="200">
             </div>
         </div>
         <div class="item__right">
@@ -22,11 +22,12 @@
                     <input type="text" class="item__price-input"  name="price" value="{{ $items->price }}">
                 </div>
                 <div class="item-button__sell">
-                    <button class="item-button__sell-submit">購入手続きへ</button>
+                    <a href="/purchase/{{$items->id}}" class="purchase__link">購入手続きへ</a>
                 </div>
                 <div class="item__counts">
-                    <input type="text" class="count__like" value="いいね数">
-                    <input type="text" class="count__comment" value="コメント数">
+                    <button type="submit" name="like" value="{{ 'like' }}">いいね</button>
+                    <input type="text" class="count__like" value="{{ $like_count }}">
+                    <input type="text" class="count__comment" value="{{ $comment_count }}">
                 </div>
                 <div class="item__explanation">
                     <h3 class="item__explanation-header">商品説明</h3>
@@ -39,18 +40,31 @@
                     @endforeach
                     <input type="text" class="item__condition"  name="condition" value="{{ $condition->condition }}">
                     <label for="" class="comment__count-label">コメント</label>
-                    <input type="text" class="comment__count-input" value="（カウント数）">
+                    <input type="text" class="comment__count-input" value="{{ $comment_count }}">
                 </div>
                 <div class="item-comment__addition-everyone">
-                    <input type="text" class="item-comment__user-name" value="admin">
-                    <input type="text" class="item-comment__everyone-comment" value="ここにコメントが入ります">
+                    @if(@isset($comments))
+                        @foreach($comments as $comment)
+                            <input type="text" value="{{ $comment['profile_img'] }}">
+                            <input type="text" class="item-comment__user-name" value="{{ $comment['name'] }}">
+                            <input type="text" class="item-comment__everyone-comment" value="{{ $comment['comment'] }}">
+                        @endforeach
+                    @else
+                    <p>コメントがまだありません</p>
+                    @endif
                 </div>
                 <div class="item__comment-addition">
                     <label for="" class="label__comment-addition">商品へのコメント</label>
-                    <textarea name="" id="" class="textarea__comment-addition"></textarea>
+                    <textarea name="comment" id="" class="textarea__comment-addition"></textarea>
+                    <input type="hidden" name="item_id" value="{{ $items->id }}">
+                </div>
+                <div class="error">
+                    @error('comment')
+                    {{ $message }}
+                    @enderror
                 </div>
                 <div class="send__button">
-                    <button class="send__button-submit">コメントを送信する</button>
+                    <button class="send__button-submit" type="submit" name="comment_submit" value="{{ 'comment' }}">コメントを送信する</button>
                 </div>
             </div>
         </div>

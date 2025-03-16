@@ -8,11 +8,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
 use App\Models\User;
 use App\Models\Profile;
+use App\Models\Item;
+use App\Models\Purchase;
 use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\AddressRequest;
 
 class ProfileController extends Controller
 {
-    public function getProfile(ProfileRequest $request)
+    public function getProfile()
     {
         $user_id = Auth::id();
         $profiles = Profile::find($user_id);
@@ -20,17 +23,18 @@ class ProfileController extends Controller
         return view ('profile', compact('profiles'));
     }
 
-    public function createProfile(Request $request)
+    public function createProfile(AddressRequest $request)
     {
         $profiles = $request->all();
         Profile::create($profiles);
 
         $items = Item::all();
+        $tab = "";
 
-        return view('goods', compact('items'));
+        return view('goods', compact('items', 'tab'));
     }
 
-    public function updateProfile(Request $request)
+    public function updateProfile(AddressRequest $request)
     {
         $users = $request->only(['name']);
         $profiles = $request->all();
@@ -40,13 +44,38 @@ class ProfileController extends Controller
 
         return redirect('mypage');
     }
-    public function getAddress()
+    public function getAddress($item_id)
     {
-        return view('address');
+        $items = Item::find($item_id);
+        $user_id = Auth::id();
+        $profiles = Profile::find($user_id);
+
+        return view('address', compact('items', 'profiles'));
     }
 
-    public function getMypage()
+    public function updateAddress($item_id, AddressRequest $request)
     {
-        return view('mypage');
+        $profiles = $request->all();
+        $user_id = Auth::id();
+        Profile::find($user_id)->update($profiles);
+
+        
+
+        return redirect()->route('purchase', ['item_id' => $request->item_id]);
+    }
+
+    public function getMypage(Request $request)
+    {
+        $user_id = Auth::id();
+        $profiles = Profile::find($user_id);
+        $tab = $request->tab;
+            if($tab == 'buy'){
+                $items = Item::all();
+                $items = Profile::with('items')->find($profiles->id);
+            }else{
+                $items = Item::where('user_id', $user_id)->get();
+            }
+
+        return view('mypage', compact('profiles', 'items', 'tab'));
     }
 }

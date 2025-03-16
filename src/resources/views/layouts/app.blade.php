@@ -12,7 +12,10 @@
 <body>
     <div class="header">
         <img src="{{ asset('image/coachtech_logo.svg') }}" alt="coachtech" class="coachtech">
-        <input type="text" class="search" name="name" value="{{ old('name') }}" placeholder="なにをお探しですか？">
+        <form action="/" method="post">
+            @csrf
+            <input type="text" class="search" name="search" value="{{ old('search') }}" placeholder="なにをお探しですか？">
+        </form>
         <div class="button">
             @if (Auth::check())
             <form action="/logout" class="logout__form" method="post">

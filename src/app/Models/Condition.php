@@ -9,5 +9,10 @@ class Condition extends Model
 {
     use HasFactory;
 
+    public function Items()
+    {
+        return $this->belongTo(Item::class);
+    }
+
     protected $fillable = ['condition'];
 }

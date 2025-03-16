@@ -47,4 +47,19 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\Profile');
     }
+
+    public function items()
+    {
+        return $this->belongsToMany(Item::class, 'item_user', 'user_id', 'item_id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
 }

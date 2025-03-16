@@ -9,9 +9,33 @@ class Item extends Model
 {
     use HasFactory;
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        self::saving(function($items) {
+            $items->user_id = \Auth::id();
+        });
+    }
+
     public function categories()
     {
-        return $this->belongsToMany(Category::class, 'category_item', 'item_id', 'category_id');
+        return $this->belongsToMany(Category::class, 'category_item');
+    }
+
+    public function condition()
+    {
+        return $this->hasMany(Condition::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'item_user');
+    }
+
+    public function profile()
+    {
+        return $this->belongsToMany(Profile::class, 'item_profile');
     }
 
     protected $fillable = [
@@ -23,12 +47,4 @@ class Item extends Model
         'explanation',
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        self::saving(function($items) {
-            $items->user_id = \Auth::id();
-        });
-    }
 }

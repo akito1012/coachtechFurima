@@ -14,6 +14,16 @@ class Profile extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function items()
+    {
+        return $this->belongsToMany(Item::class, 'item_profile');
+    }
+
     protected static function boot()
     {
         parent::boot();
@@ -26,5 +36,8 @@ class Profile extends Model
 
     protected $fillable = ['profile_img', 'post_code', 'address', 'building'];
 
-    
+    public function getImg()
+    {
+        return $this->profile_img;
+    }
 }

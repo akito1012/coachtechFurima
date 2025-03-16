@@ -23,14 +23,16 @@ Route::get('/', function () {
 
 
 Route::get('/', [AuthController::class, 'index']);
-Route::post('/', [ItemController::class, 'postGoods']);
+Route::post('/', [AuthController::class, 'searchItem']);
 Route::get('/mypage', [ProfileController::class, 'getMypage']);
 Route::get('/mypage/profile', [ProfileController::class, 'getProfile']);
 Route::post('/mypage/profile', [ProfileController::class, 'createProfile']);
 Route::patch('/mypage/profile', [ProfileController::class, 'updateProfile']);
-Route::get('/address', [ProfileController::class, 'getAddress']);
 Route::get('/sell', [ItemController::class, 'getSell']);
 Route::post('/sell', [ItemController::class, 'createSell']);
-Route::get('/purchase/address', [ProfileController::class, 'getAddress']);
 Route::get('/item/{item_id}', [ItemController::class, 'getItem']);
-Route::get('/purchase', [ItemController::class, 'getPurchase']);
+Route::post('/item/{item_id}', [ItemController::class, 'postItemCommentLike']);
+Route::get('/purchase/{item_id}', [ItemController::class, 'getPurchase']);
+Route::post('purchase/{item_id}', [ItemController::class, 'postPurchase']);
+Route::get('/purchase/address/{item_id}', [ProfileController::class, 'getAddress']);
+Route::patch('purchase/address/{item_id}', [ProfileController::class, 'updateAddress']);
