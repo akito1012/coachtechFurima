@@ -55,6 +55,25 @@ ARM64の場合以下の文をmysqlとphpmyadminのimageの下に張り付ける
 - パスワード: password
 - 
 
+###使用技術（実行環境）
+
+・php8.1.2
+
+・laravel8.83.8
+
+・mysql8.0.26
+
+###ER図
+
+![drawio](https://github.com/user-attachments/assets/915d5e99-472b-4f76-9d13-cfc42760792b)
+
+
+
+###URL
+
+・開発環境：http://localhost/
+
+・phpMyAdmin:：http://localhost:8080/
   
 
 
