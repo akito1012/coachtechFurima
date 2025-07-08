@@ -54,7 +54,7 @@
                         @endforeach
                         {{ $comments->links() }}
                     @else
-                    <p>コメントがまだありません</p>
+                    <p>コメントがまだありませんよ</p>
                     @endif
                 </div>
                 <div class="item__comment-addition">
