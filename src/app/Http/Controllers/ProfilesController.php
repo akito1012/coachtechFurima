@@ -13,7 +13,7 @@ use App\Models\Purchase;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\AddressRequest;
 
-class ProfileController extends Controller
+class ProfilesController extends Controller
 {
     public function getProfile()
     {

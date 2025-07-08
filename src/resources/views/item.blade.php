@@ -11,7 +11,7 @@
         @csrf
         <div class="item__left">
             <div class="item__img">
-                <input type="text" class="item__img-input" value="商品画像" width="200" height="200">
+                <img src="{{ asset($items->img) }}" alt="商品画像" class="item__img-input" width="200" height="200">
             </div>
         </div>
         <div class="item__right">
@@ -25,8 +25,11 @@
                     <a href="/purchase/{{$items->id}}" class="purchase__link">購入手続きへ</a>
                 </div>
                 <div class="item__counts">
-                    <button type="submit" name="like" value="{{ 'like' }}">いいね</button>
+                    <button type="submit" name="like">
+                        <img src="{{ asset('image/like.png') }}" alt="いいね" class="like_img" width="30" height="30">
+                    </button>
                     <input type="text" class="count__like" value="{{ $like_count }}">
+                    <img src="{{ asset('image/comment.png') }}" alt="コメント" class="comment_img" width="20" height="20">
                     <input type="text" class="count__comment" value="{{ $comment_count }}">
                 </div>
                 <div class="item__explanation">
@@ -49,6 +52,7 @@
                             <input type="text" class="item-comment__user-name" value="{{ $comment['name'] }}">
                             <input type="text" class="item-comment__everyone-comment" value="{{ $comment['comment'] }}">
                         @endforeach
+                        {{ $comments->links() }}
                     @else
                     <p>コメントがまだありません</p>
                     @endif
@@ -64,7 +68,7 @@
                     @enderror
                 </div>
                 <div class="send__button">
-                    <button class="send__button-submit" type="submit" name="comment_submit" value="{{ 'comment' }}">コメントを送信する</button>
+                    <button class="send__button-submit" type="submit" name="comment_submit">コメントを送信する</button>
                 </div>
             </div>
         </div>

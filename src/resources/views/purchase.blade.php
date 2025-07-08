@@ -12,7 +12,7 @@
         <div class="purchase__left">
             <div class="purchase-item">
                 <div class="purchase-item__left">
-                    <input type="text" class="purchase-item__img" value="{{ $items->img }}">
+                    <img src="{{ asset($items->img) }}" alt="商品画像" class="purchase-item__img" width="100" height="100">
                 </div>
                 <div class="purchase-item__right">
                     <input type="text" class="purchase-item__name" value="{{ $items->name }}">
@@ -21,10 +21,10 @@
             </div>
             <div class="purchase-payment">
                 <h4 class="payment__header">支払方法</h4>
-                <select name="payment" id="" class="payment__select">
+                <select name="payment" id="" class="payment__select" onchange="this.form.submit()">
                     <option value="">選択してください</option>
-                    <option value="{{ 'コンビニ払い' }}">コンビニ払い</option>
-                    <option value="{{ 'カード払い' }}">カード払い</option>
+                    <option value="{{ 'コンビニ払い' }}"@if($payment = 'コンビニ払い') selected @endif>コンビニ払い</option>
+                    <option value="{{ 'カード払い' }}"  @if($payment = 'カード払い') selected @endif>カード払い</option>
                 </select>
             </div>
             <div class="error">
@@ -51,13 +51,13 @@
                 <tr class="payment__table-row">
                     <th class="payment__table-header">支払方法</th>
                     <td class="payment__table-description">
-                        <input type="text" class="item-price__input" name="" value="支払方法">
+                        <input type="text" class="item-price__input" name="paymentCheck" value="{{ $paymentCheck }}">
                     </td>
                 </tr>
             </table>
             <div class="payment__button">
                 <input type="hidden" name="profile_id" value="{{ Auth::id() }}">
-                <input type="text" name="item_id" value="{{ $items->id }}">
+                <input type="hidden" name="item_id" value="{{ $items->id }}">
                 <button class="payment__button-submit">購入する</button>
             </div>
         </div>

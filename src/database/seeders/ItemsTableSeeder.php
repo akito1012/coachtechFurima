@@ -17,7 +17,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'condition_id' => '1',
-            'img' => 'Armani+Mens+Clock.jpg',
+            'img' => 'image/Armani+Mens+Clock.jpg',
             'name' => '腕時計',
             'bland' => 'なしなし',
             'price' => 15000,
@@ -27,7 +27,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'condition_id' => '2',
-            'img' => 'HDD+Hard+Disk.jpg',
+            'img' => 'image/HDD+Hard+Disk.jpg',
             'name' => 'HDD',
             'bland' => 'なし',
             'price' => 5000,
@@ -37,7 +37,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'condition_id' => '3',
-            'img' => 'iLoveIMG+d.jpg',
+            'img' => 'image/iLoveIMG+d.jpg',
             'name' => '玉ねぎ三束',
             'bland' => 'なし',
             'price' => 300,
@@ -47,7 +47,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'condition_id' => '4',
-            'img' => 'Leather+Shoes+Product+Photo.jpg',
+            'img' => 'image/Leather+Shoes+Product+Photo.jpg',
             'name' => '革靴',
             'bland' => 'なし',
             'price' => 4000,
@@ -57,7 +57,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'condition_id' => '1',
-            'img' => 'Living+Room+Laptop.jpg',
+            'img' => 'image/Living+Room+Laptop.jpg',
             'name' => 'ノートPC',
             'bland' => 'なし',
             'price' => 45000,
@@ -67,7 +67,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'condition_id' => '2',
-            'img' => 'Music+Mic+4632231.jpg',
+            'img' => 'image/Music+Mic+4632231.jpg',
             'name' => 'マイク',
             'bland' => 'なし',
             'price' => 8000,
@@ -77,7 +77,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'condition_id' => '3',
-            'img' => 'Purse+fashion+pocket.jpg',
+            'img' => 'image/Purse+fashion+pocket.jpg',
             'name' => 'ショルダーバッッグ',
             'bland' => 'なし',
             'price' => 3500,
@@ -87,7 +87,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'condition_id' => '4',
-            'img' => 'Tumbler+souvenir.jpg',
+            'img' => 'image/Tumbler+souvenir.jpg',
             'name' => 'タンブラー',
             'bland' => 'なし',
             'price' => 500,
@@ -97,7 +97,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'condition_id' => '1',
-            'img' => 'Waitress+with+Coffee+Grinder.jpg',
+            'img' => 'image/Waitress+with+Coffee+Grinder.jpg',
             'name' => 'コーヒーミル',
             'bland' => 'なし',
             'price' => 4000,
@@ -107,7 +107,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'condition_id' => '2',
-            'img' => '外出メイクアップセット.jpg',
+            'img' => 'image/make_up_set.jpg',
             'name' => 'メイクセット',
             'bland' => 'なし',
             'price' => 2500,

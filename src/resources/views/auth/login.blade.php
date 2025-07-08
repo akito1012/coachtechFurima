@@ -16,12 +16,20 @@
             <label for="user" class="item__label">ユーザー名/メールアドレス</label>
             <input type="text" class="item__input" id="user" name="email" value="{{ old('email') }}">
         </div>
-        
+        <div class="error">
+            @error('email')
+            {{ $message }}
+            @enderror
+        </div>
         <div class="login__item">
             <label for="password" class="item__label">パスワード</label>
             <input type="text" class="item__input" id="password" name="password" />
         </div>
-        
+        <div class="error">
+            @error('password')
+            {{ $message }}
+            @enderror
+        </div>
         <div class="button">
             <button class="login__button">ログインする</button>
         </div>

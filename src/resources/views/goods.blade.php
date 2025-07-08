@@ -29,7 +29,7 @@
             @else
             @foreach($items as $item)
             <a href="/item/{{$item->id}}" class="item__page">
-                <img src="{{ asset('storage/item_img/{$item->img}') }}" alt="商品画像" class="item__img" width="100" height="100">
+                <img src="{{ asset($item->img) }}" alt="商品画像" class="item__img" width="100" height="100">
                 <input class="item__name-input"type="text"  name="name" value="{{ $item->name }}">
                 <input type="hidden" class="id__submit" name="id" value="{{ $item->id }}">
             </a>

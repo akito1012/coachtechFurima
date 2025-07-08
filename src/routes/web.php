@@ -2,9 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\FirstRegisterMiddleware;
+use App\Http\Middleware\LikeCountMiddleware;
+use App\Http\Middleware\PurchaseMiddleware;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ItemController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\ProfilesController;
+use App\Http\Controllers\FortifyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,17 +25,21 @@ Route::get('/', function () {
 });
 
 
+Route::post('/login', [FortifyController::class, 'loginUser']);
+Route::post('/rezister', [FortifyController::class, 'registerUser']);
+
+Route::post('/logout', [FortifyController::class, 'destroy']);
 Route::get('/', [AuthController::class, 'index']);
 Route::post('/', [AuthController::class, 'searchItem']);
-Route::get('/mypage', [ProfileController::class, 'getMypage']);
-Route::get('/mypage/profile', [ProfileController::class, 'getProfile']);
-Route::post('/mypage/profile', [ProfileController::class, 'createProfile']);
-Route::patch('/mypage/profile', [ProfileController::class, 'updateProfile']);
-Route::get('/sell', [ItemController::class, 'getSell']);
-Route::post('/sell', [ItemController::class, 'createSell']);
-Route::get('/item/{item_id}', [ItemController::class, 'getItem']);
-Route::post('/item/{item_id}', [ItemController::class, 'postItemCommentLike']);
-Route::get('/purchase/{item_id}', [ItemController::class, 'getPurchase']);
-Route::post('purchase/{item_id}', [ItemController::class, 'postPurchase']);
-Route::get('/purchase/address/{item_id}', [ProfileController::class, 'getAddress']);
-Route::patch('purchase/address/{item_id}', [ProfileController::class, 'updateAddress']);
+Route::get('/mypage', [ProfilesController::class, 'getMypage']);
+Route::get('/mypage/profile', [ProfilesController::class, 'getProfile']);
+Route::post('/mypage/profile', [ProfilesController::class, 'createProfile']);
+Route::patch('/mypage/profile', [ProfilesController::class, 'updateProfile']);
+Route::get('/sell', [ItemsController::class, 'getSell']);
+Route::post('/sell', [ItemsController::class, 'createSell']);
+Route::get('/item/{item_id}', [ItemsController::class, 'getItem']);
+Route::post('/item/{item_id}', [ItemsController::class, 'postItemCommentLike'])->middleware('like.count');
+Route::get('/purchase/{item_id}', [ItemsController::class, 'getPurchase']);
+Route::post('purchase/{item_id}', [ItemsController::class, 'postPurchase'])->middleware('purchase');
+Route::get('/purchase/address/{item_id}', [ProfilesController::class, 'getAddress']);
+Route::patch('purchase/address/{item_id}', [ProfilesController::class, 'updateAddress']);

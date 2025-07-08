@@ -19,7 +19,7 @@ use App\Http\Requests\CommentRequest;
 use App\Http\Requests\PurchaseRequest;
 use App\Http\Requests\ExhibitionRequest;
 
-class ItemController extends Controller
+class ItemsController extends Controller
 {
     public function getSell()
     {
@@ -64,6 +64,7 @@ class ItemController extends Controller
         foreach($comments as $comment){
             $comment = Comment::with(['users', 'profiles'])->get();
         }
+        $comments = Comment::simplePaginate(1);
         
         return view('item', compact('items', 'condition', 'categories', 'like_count', 'comment_count', 'comments'));
     }
@@ -75,20 +76,7 @@ class ItemController extends Controller
         $condition = Condition::find($items->condition_id);
         $categories = Item::with('categories')->find($item_id);
         
-        $like = $request->like;
-        if(@isset($like)){
-            $user = User::find(Auth::id());
-            $like = $user->items()->where('item_id', $item_id)->exists();
-            if($like){
-                $user->items()->detach([$item_id]);
-            }else{
-                $user->items()->attach([$item_id]);
-            }
-            return back();
-
-        }
-        $comment_submit = $request->comment_submit;
-        if(@isset($comment_submit)){
+        if($request->has('comment_submit')){
             $comments = [
                 'user_id' => Auth::id(),
                 'profile_id' => Auth::id(),
@@ -105,8 +93,9 @@ class ItemController extends Controller
         $items = Item::find($item_id);
         $user_id = Auth::id();
         $profiles = Profile::find($user_id);
+        $paymentCheck = '';
 
-        return view('purchase', compact('items', 'profiles'));
+        return view('purchase', compact('items', 'profiles', 'paymentCheck'));
     }
 
     public function postPurchase(PurchaseRequest $request)
